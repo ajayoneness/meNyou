@@ -1,0 +1,106 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
+    <link href="{% static 'style.css' %}" rel=stylesheet type="text/css">
+
+    <title>meNyou</title>
+  </head>
+  <body>
+
+    
+<!--      select your gender -->
+      {% if user.is_authenticated %}
+      <div class="container mt-3 mb-3">
+          <div class="row" style=" box-shadow:0px 0px 10px black; border-radius:30px;  background-color : rgba(0,0,0,0.3)">
+              <div class="col">
+                  <a style="color: white;  position :absolute; border:2px solid white; background:black; border-radius:30px; margin-top : 2px;  " class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </div>
+              <div class="col">
+                  <p class="mt-2" style="color: white;"><b>Hi, {{user.first_name}} {{user.last_name}}</b></p>
+              </div>
+
+          </div>
+      </div>
+          {% endif%}
+
+    {% block content %}
+
+
+        <div class="container">
+          <h1>Select Your Gender </h1>
+          <form method="post" id="sub">
+              {%csrf_token%}
+              <input type="hidden" name="male" id="male">
+              <input type="hidden" name="female" id="female">
+              <div class="row p-2 m-5">
+                  <div class="col">
+                          <div class="card" style="" onclick="male()">
+                            <img class="card-img-top" src="https://codeaj.my.canva.site/images/c43b1cb8a302a1dc62f13aaedb21e60a.svg" alt="male image">
+                            <div class="card-body">
+                              <h5 class="card-title">Male</h5>
+                            </div>
+                          </div>
+                    </div>
+            <div class="col">
+                 <div class="card" onclick="female()">
+                    <img class="card-img-top" src="https://codeaj.my.canva.site/images/d00b0ad355e47cc6d11e1f44d1aaeb1e.svg"  alt="Female">
+                    <div class="card-body">
+                        <h5 class="card-title">Female</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      
+      <script>
+
+         var male_val = document.getElementById("male")
+         var female_val = document.getElementById("female")
+         var form = document.getElementById("sub")
+
+          function male(){
+              console.log("male")
+              male_val.value = "male"
+              form.submit()
+          }
+          function female(){
+              console.log("female")
+              female_val.value = "female"
+              form.submit()
+
+          }
+          
+      
+      </script>
+
+
+{% endblock %}
+            
+<!--      footer -->
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+    <a class="text-dark" href="https://codeajay.blogspot.com/">codeAj Production</a>
+    </div>    
+      
+</footer>
+
+      
+      
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

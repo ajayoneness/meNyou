@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #58ad8a;
+    
+}
+.container h1{
+    color: white;
+   
+}
+
+
+
+button{
+    border: none;
+    background-color: #00462b;
+    box-shadow: 0px 0px 10px #00462b;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.card{
+    
+    background: #00462b;
+    border : none;
+    color: white;
+    
+}
+
+.card img{
+    height: 200px;
+    width: 200px;
+}
+
+.files input {
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+    border :none;
+    background-image: url("https://codeaj.my.canva.site/images/50df8fc2106e2c6419d5f774db34d9cd.svg");
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size:100px;
+    background-color: #000c1b;
+    color: white;
+        
+}
+.files input:focus{
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    background-color: #000c1b;
+    color: white;
+ }
+
+.files{position:relative}
+
+.files{
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #000c1b; 
+    box-shadow: 0px 0px 10px #000c1b;
+}
+
+
+.files:after {  
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.color input{
+    
+    background-color:#f1f1f1;
+
+}
+.files:before {
+    position: absolute;
+    bottom: 50px;
+    left: 0;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " Drag and Drop ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    font-size:25px;
+    text-align: center;
+}
+
+.aj{
+    
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+#code{
+    position: relative;
+    left: 40%;
+    text-decoration: none;
+    color: white;
+    margin-top: 50px;
+    background-color: black;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius:5px;
+    letter-spacing: 4px;
+    box-shadow: 0px 0px 5px black;
+    
+}
+
+.box{
+    margin-top: 50px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+@media only screen and (min-width: 900px) {
+  .box {
+    padding: 100px;
+  }
+    
+}
+
+.mu input{
+    padding: 20px;
+    border:none;
+    border-radius: 40px;
+    background-color: #00462b;
+    box-shadow: 0px 0px 10px #00462b;
+    color: white;
+    
+}
+
+.bt{
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 150px;
+    margin-top : 30px;
+}
+.bt:hover{
+    
+    color: Black;
+    background-color: white;
+    display: none;
+}
+
+.bt1{
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 150px;
+    margin-top : 30px;
+}
+.bt1:hover{
+    
+    color: Black;
+    background-color: white;
+}
+
+
+
+
+small{
+    position: absolute;
+    top :100px;
+    left  : 70px
+}
+
+.full{
+    height: 100vh;
+    width: 100%;
+    background:url('https://i.ibb.co/bBZ9t8d/ezgif-com-gif-maker.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover
+}
+
+.all{
+    height: 92vh;
+}
+
+.all h5{
+    color: white;
+    text-align: center;
+    position: relative;
+    top:75%;
+}
+
+.all a{
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 15px;
+    border-radius: 30px;
+    top: 80%;
+    left: 45%;
+    font-weight: bold;
+    border : 2px solid white;
+}
+
+.all a:hover{
+    transition: 1s;
+    background-color: white;
+    color: red;
+    border : 2px solid red;
+}
+
+.b{
+    height: 100vh;
+    width: 100%; background:url('https://codeaj.my.canva.site/images/b4db8592c9305149571feac0627fddf8.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
+
+
+
+
+

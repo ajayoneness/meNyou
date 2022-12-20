@@ -1,0 +1,35 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<!--      select your gender -->
+    <style>
+        .an{
+            position :relative;
+            text-align : center;
+            top : 50px;
+            padding :20px;
+            border : 3px solid black;
+             margin:20px;
+             }
+    </style>
+      
+      <div class="container">
+          <div class="an">
+          <h1>Login</h1><br>
+          <form method="post">
+              {% csrf_token %}
+            <input type="text" name="user_name" placeholder="User Name"><br><br>
+            <input type="password" name="password" placeholder="Password"><br><br>
+            <input type="submit" value="LOGIN">
+          </form>
+           <div class="anjali">
+               {% for message in messages %}
+                    <h3>{{message}}</h3>
+               {% endfor %}
+           </div>
+
+          <p> <span><a class="nav-link" href="{% url 'register' %}">Register Now </a></span></p>
+        </div>
+      </div>
+      
+{% endblock %}

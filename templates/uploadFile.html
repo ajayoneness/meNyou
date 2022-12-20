@@ -1,0 +1,66 @@
+{% extends 'Home.html' %}
+{% block content %}
+      <div class="container">
+          <h1>Upload your Whatapp Extracted Chart</h1>
+        <div class="row p-5">
+          <div class="col-md-6 mt-5 aj">
+              <form method="post" id="form_sub" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="form-group p-5 files" id="files">
+                      <input id=file name="chart" type="file" class="form-control" onchange="codeaj()" accept=".txt">
+                  </div>
+                  <b><p id="err" style="color: black ; text-align: left;"></p></b>
+              <input type="button" onclick="raj()" id="code" value="NEXT   ➤">
+
+              </form>
+          </div>
+        </div>
+    </div>
+      
+      
+      
+      
+    <script>
+        var fileInput = document.getElementById('file');
+        var box=document.getElementById('files');
+        var error = document.getElementById('err');
+
+        function raj(){
+            if (fileInput.value === ""){
+                box.style.boxShadow = "0px 0px 20px red"
+                err.innerHTML = "No File Selected"
+            }
+            else{
+                document.getElementById("form_sub").submit()
+                alert("submitted Successfully")
+            }
+            
+        }
+          
+          
+        function codeaj() {
+        var filePath = fileInput.value;
+         
+        var allowedExtensions =
+                    /(\.txt)$/i; 
+            if (!allowedExtensions.exec(filePath)) {
+                box.style.boxShadow = "0px 0px 20px red"
+                err.innerHTML = "Invalid file type"
+                fileInput.value = '';
+                return false;
+            }
+            
+            else
+            {
+               box.style.boxShadow = "0px 0px 20px #08FF00"
+                err.innerHTML = ""  
+            } 
+           
+        }
+        
+//        
+      
+      </script>
+
+
+{% endblock %}
