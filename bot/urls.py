@@ -7,8 +7,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.chartbot , name="chart"),
     path('upload/', views.upload_chart , name="upload"),
+    path('younme/', views.youandme , name="younme"),
     path('training/', views.training_data , name="training"),
-]
+    path('main/',views.main,name="main")
 
-if settings.DEBUG:
-    urlpatterns+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

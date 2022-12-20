@@ -9,21 +9,41 @@ def chartbot(request):
         print(settings.BASE_DIR)
 
         if ml=='':
-            print(fml)
-            return redirect('/bot/upload/')
+            request.session['gender']=fml
+            return redirect('/bot/younme/')
         else:
-            print(ml)
-            return redirect('/bot/upload/')
+            request.session['gender']=ml
+            return redirect('/bot/younme/')
     return render(request,"Home.html")
+
+def youandme(request):
+    if request.method == "POST":
+        request.session['name'] = request.POST['yourname']
+        request.session['partner'] = request.POST['partnername']
+        return redirect('/bot/upload/')
+
+    return render(request,'youandme.html')
+
 
 
 def upload_chart(request):
     if request.method == 'POST':
         chart = request.FILES['chart']
         print(request.user.username,chart)
-        chart_upload(user_name=request.user.username,upload_chart=chart).save()
+        chart_upload(user_name=request.user.username,
+                     upload_chart=chart,
+                     gender=request.session['gender'],
+                     your_name=request.session['name'],
+                     partner_name=request.session['partner'],
+                     ).save()
+        return redirect('/bot/training/')
 
     return render(request,'uploadFile.html')
 
+
+
 def training_data(request):
-    pass
+    return render(request,'process.html')
+
+def main(request):
+    return render(request,'chart.html')
